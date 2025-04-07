@@ -1,0 +1,390 @@
+@use "./mixins.sass" as *
+@use "../scss/fonts.scss" as *
+@include fonts()
+
+body
+  max-width: 1920px
+  width: 100%
+  background-color: $mainBgColor
+
+header
+  height: 120px
+  align-content: center
+  display: flex
+  max-width: inherit
+  width: 100%
+
+  .header-menu
+    display: flex
+    max-width: inherit
+    width: calc(100% - 160px)
+    margin: auto
+    justify-content: space-between
+    height: 40px
+    flex-wrap: wrap
+
+    .header-menu__punkts
+      display: inherit
+      gap: 40px
+      align-items: center
+      flex-wrap: inherit
+
+      img
+        width: 40px
+        height: 40px
+
+      p
+        font-family: "Roboto", sans-serif
+        font-size: 18px
+        color: $headerTextColor
+
+        &:hover
+          cursor: pointer
+
+      &:last-of-type
+
+        p
+          &:last-of-type
+            border-bottom: 1px solid $headerTextColor
+
+    .header-menu__text
+      align-self: center
+      font-family: "Elsie", sans-serif
+      color: $headerTextColor
+      font-weight: 900
+      font-size: 32px
+      flex-wrap: nowrap
+
+main
+  max-width: inherit
+  width: 100%
+
+  .main__who-we-are
+    display: flex
+    max-width: inherit
+    width: calc(100% - 229px - 229px)
+    margin: 80px auto 0
+    justify-content: space-between
+    align-content: flex-start
+    height: 108px
+
+    h1
+      @include h1()
+
+    p
+      font-family: "Roboto", sans-serif
+      font-size: 18px
+      font-weight: 400
+      color: $headerTextColor
+      line-height: 150%
+      flex-wrap: wrap
+
+  .main__arrows
+    display: flex
+    margin-top: 36px
+    gap: 24px
+    margin-left: 80px
+
+  .main__gallery
+    margin-top: 40px
+    max-width: inherit
+    width: 100%
+    height: 433px
+    background-image: url("../assets/img/Photo-carasoul.png")
+    background-size: cover
+    background-repeat: no-repeat
+
+.menu
+  justify-items: center
+  max-width: inherit
+  width: 100%
+  margin-top: 80px
+
+  h1
+    @include h1(nowrap)
+
+
+  p
+    text-align: center
+    margin-top: 24px
+    font-family: "Roboto", sans-serif
+    font-size: 18px
+    font-weight: 400
+    color: $headerTextColor
+    line-height: 160%
+
+  .menu__punkts
+    display: flex
+    margin-top: 24px
+    gap: 40px
+    list-style-type: none
+
+    li
+      padding: 16px 40px
+      font-family: "Roboto", sans-serif
+      font-size: 16px
+      font-weight: 400
+      color: $headerTextColor
+      border-radius: 20px
+      border: solid 2px #B7BCA9
+
+      &:hover
+        cursor: pointer
+        background-color: #B7BCA9
+
+      &:nth-of-type(2)
+        background-color: #B7BCA9
+
+  .menu-gallery
+    display: flex
+    align-items: center
+    max-width: inherit
+    width: calc(100% - 248px)
+    margin: 40px auto 0
+    justify-content: space-between
+
+    .menu-gallery__punkt
+      justify-items: center
+      max-width: 569px
+      width: 100%
+
+      h1
+        @include h1($size: 20px)
+        margin-top: 16px
+
+      p
+        font-family: "Roboto", sans-serif
+        font-size: 16px
+        font-weight: 400
+        color: $headerTextColor
+        line-height: 100%
+
+  .menu-product
+    max-width: 1462px
+    width: 100%
+    margin: 80px auto 0
+    flex-wrap: wrap
+    display: grid
+    grid-template-columns: 1fr 40px 1fr 218px 1fr
+
+    .menu-product__punkt
+      display: flex
+      flex-direction: column
+      margin: 0
+      gap: 16px
+      grid-column: 1
+
+      img
+        width: 570px
+        height: 760px
+
+      h1
+        font-family: "Clash-Display-Bold", sans-serif
+        font-weight: 700
+        font-size: 20px
+        color: $headerTextColor
+
+      p
+        margin: 0
+        text-align: initial
+        font-family: "Roboto", sans-serif
+        font-size: 16px
+        font-weight: 400
+
+        &:nth-of-type(1)
+          font-weight: 600
+
+    .menu-product__arrows
+      margin-top: 570px
+      display: flex
+      flex-direction: column
+      gap: 36px
+      grid-column: 3
+
+      img
+        width: 64px
+        height: 64px
+
+    .menu-product__list
+      grid-column: 5
+      max-width: 570px
+      width: 100%
+      margin-top: 120px
+
+      ul
+        list-style-type: none
+
+        li
+          width: 570px
+          padding-bottom: 40px
+          padding-top: 40px
+          border-bottom: 1px solid #878F70
+          @include h1()
+          color: #9FA68C
+
+          &:hover
+            cursor: pointer
+
+          &:nth-of-type(2)
+            color: $headerTextColor
+            font-family: "Clash-Display-Bold", sans-serif
+            font-weight: 700
+
+.team
+  max-width: inherit
+  width: 100%
+  background-color: #B7BCA9
+  flex-wrap: wrap
+  padding-top: 80px
+
+  .team__header
+    justify-self: center
+    justify-content: space-between
+    max-width: calc(305px + 587px + 570px)
+    width: 100%
+    flex-wrap: inherit
+    display: flex
+
+    h1
+      @include h1()
+
+    p
+      font-family: "Roboto", sans-serif
+      color: $headerTextColor
+      font-size: 18px
+      font-weight: 400
+      line-height: 160%
+
+  .team__arrows
+    gap: 24px
+    display: flex
+    margin-top: 80px
+    margin-left: 80px
+    flex-wrap: wrap
+
+  .team-gallery
+    max-width: 1632px
+    width: 100%
+    justify-content: space-between
+    display: flex
+    margin: 40px auto 0
+
+    .team-gallery__punkt
+      display: flex
+      flex-direction: column
+      align-items: center
+      row-gap: 16px
+      flex-wrap: wrap
+
+      h1
+        font-family: "Clash-Display-Bold", sans-serif
+        font-weight: 700
+        font-size: 20px
+        line-height: 24px
+        color: $headerTextColor
+
+      p
+        text-align: center
+        font-family: "Roboto", sans-serif
+        font-weight: 600
+        font-size: 18px
+        line-height: 16px
+        color: $headerTextColor
+        word-wrap: normal
+
+        &:nth-of-type(2)
+          font-weight: 400
+          line-height: 140%
+
+.events
+  max-width: inherit
+  width: 100%
+  padding-bottom: 80px
+
+  h1
+    @include h1()
+    margin-top: 80px
+    margin-left: 229px
+
+  .events__gallery
+    display: flex
+    flex-wrap: wrap
+    max-width: calc(100% - 160px)
+    width: 100%
+    margin: 80px auto 0
+    gap: 24px
+
+    img
+      width: 868px
+      height: 637px
+footer
+  background-color: #B7BCA9
+  max-width: inherit
+  width: 100%
+  flex-direction: row
+  height: 309px
+
+  .footer__wrapper
+    display: flex
+    flex-wrap: wrap
+    max-width: calc(100% - 160px)
+    width: 100%
+    margin: 0 auto
+    justify-content: space-between
+
+    .footer__list
+      margin-top: 80px
+
+      ul
+        list-style-type: none
+        display: flex
+        gap: 40px
+
+        li
+          color: $headerTextColor
+          font-family: "Roboto", sans-serif
+          font-size: 18px
+
+    .footer__social
+      margin-top: 72px
+      display: flex
+      flex-direction: column
+      gap: 72px
+      align-items: center
+
+      h1
+        font-family: "Elsie", sans-serif
+        font-weight: 900
+        font-size: 32px
+        color: $headerTextColor
+
+      .footer__social__icons
+        gap: 24px
+        display: flex
+        justify-content: space-between
+
+    .footer__form
+      display: flex
+      margin-top: 80px
+      flex-direction: column
+
+      label
+        color: $headerTextColor
+        font-family: "Roboto", sans-serif
+        font-size: 18px
+
+      input
+        width: 199px
+        height: 51px
+        padding: 16px 0 16px 16px
+        background-color: inherit
+        border: none
+        border-bottom: solid 2px black
+
+        &::placeholder
+          color: #878F70
+          font-family: "Roboto", sans-serif
+          font-size: 16px
+
+        &:focus
+          border: inherit
